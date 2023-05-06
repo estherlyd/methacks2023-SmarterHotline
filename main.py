@@ -2,7 +2,6 @@ import cohere
 from cohere.responses.classify import Example
 #
 # co = cohere.Client('1hBeXHXGg8WJ4HedMULMJxi0Br9opZ6tI3QeW76C')
-
 examples=[
   Example("Where can I find a safe shelter for women in my area?", "Shelters"),
   Example("What kind of medical assistance is available for survivors of sexual assault?", "Medical assistance"),
@@ -54,12 +53,21 @@ inputs=[
   "I am worried about my exam",
 
 ]
-
+#
 # response = co.classify(
 #   inputs=inputs,
 #   examples=examples,
 # )
-# print(response)
+# for classification in response:
+#     labels = response.labels
+#     probabilities = response.probabilities
+# print(dir(response[0]))
+# labels = []
+# for classification in response:
+#     labels.extend(classification.labels)
+# print(labels)
+# print(response.labels())
+# print(probabilities)
 # print(type(response))
 
 import flask
@@ -77,9 +85,16 @@ def get_model_response(inputs,examples):
 def get_response():
     # get the response from the function you defined earlier
     response = get_model_response(inputs,examples)
-    labels = response.labels
-    probabilities = response.probabilities
-    results = [{'label': label, 'probability': probability} for label, probability in zip(labels, probabilities)]
+    labels = []
+    for classification in response:
+        labels.extend(classification.labels)
+    # confidence = []
+    # for classification in response:
+    #     confidence.extend(classification.confidence)
+    # probabilities = response.confidence
+    if isinstance(classification.confidence, float):
+        probabilities = [classification.confidence]
+    results = [{'label': labels, 'probability': probabilities} for label, probability in zip(labels, probabilities)]
     return render_template('response.html', results=results)
 if __name__ == '__main__':
     app.run()

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>API Response</title>
-</head>
-<body>
-	{% if response %}
-		<p>Response: {{ response }}</p>
-	{% else %}
-		<p>No response received.</p>
-	{% endif %}
-</body>
+  <head>
+    <title>Model Response</title>
+  </head>
+  <body>
+    <h1>Model Response</h1>
+    <ul>
+      {% for result in results %}
+        <li>{{ result.label }}: {{ result.probability }}</li>
+      {% endfor %}
+    </ul>
+  </body>
 </html>
