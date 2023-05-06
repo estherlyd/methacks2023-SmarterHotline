@@ -1,7 +1,7 @@
 import cohere
 from cohere.responses.classify import Example
 #
-# co = cohere.Client('1hBeXHXGg8WJ4HedMULMJxi0Br9opZ6tI3QeW76C')
+co = cohere.Client('1hBeXHXGg8WJ4HedMULMJxi0Br9opZ6tI3QeW76C')
 examples=[
   Example("Where can I find a safe shelter for women in my area?", "Shelters"),
   Example("What kind of medical assistance is available for survivors of sexual assault?", "Medical assistance"),
@@ -49,60 +49,13 @@ examples=[
   Example("What should I do if all of the shelters in my area are full?", "Shelters"),
 
 ]
-# inputs=["I am worried about my exam",]
-#
-# response = co.classify(
-#   inputs=inputs,
-#   examples=examples,
-# )
-# for classification in response:
-#     labels = response.labels
-#     probabilities = response.probabilities
-# print(dir(response[0]))
-# labels = []
-# for classification in response:
-#     labels.extend(classification.labels)
+inputs=["therapy",]
 
-import flask
-from flask import Flask,request,render_template
-app = Flask(__name__,template_folder='templates')
+response = co.classify(
+  inputs=inputs,
+  examples=examples,
+)
 
-
-
-question =''
-inputs=''
-@app.route('/', methods=["POST", "GET"])
-def form():
-     if request.method == "POST":
-        global question
-        question = request.form["question"]
-        global inputs
-        inputs=[question]
-        return (get_response())
-
-     return render_template('form.html')
-
-print(inputs)
-def get_model_response(inputs,examples):
-  co = cohere.Client('1hBeXHXGg8WJ4HedMULMJxi0Br9opZ6tI3QeW76C')
-  response = co.classify(inputs=inputs, examples=examples)
-  return response
-@app.route('/get_response')
-def get_response():
-    response = get_model_response(inputs,examples)
-    labels = []
-    for classification in response:
-        labels.extend(classification.labels)
-
-    prediction = []
-    for classification in response:
-        prediction.extend(classification.prediction)
-    # probabilities = response.confidence
-    if isinstance(classification.confidence, float):
-        probabilities = [classification.confidence]
-    # results = [{'prediction':prediction,  'probability': probabilities} for prediction, probability in zip(prediction, probabilities)]
-    results = [{'label': c.prediction, 'probability': probabilities} for c in response.classifications]
-
-    return render_template('response.html', results=results)
-if __name__ == '__main__':
-    app.run(debug=True)
+print(dir(response[0]))
+print(response)
+# print(response.prediction)
