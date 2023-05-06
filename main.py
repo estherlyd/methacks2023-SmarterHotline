@@ -105,9 +105,9 @@ def get_response():
     print(type(results))
     for result in results:
         if result['label'] == 'Shelters':
-            return ('https://github.com/')
-    # if results['label'] == 'Shelters':
-    #     return ('some shelter resources')
+            suggestion = "Here are some <a href='https://github.com'>shelter resources</a>."
+            return suggestion
+
     return render_template('response.html', results=results)
 if __name__ == '__main__':
     app.run(debug=True)
