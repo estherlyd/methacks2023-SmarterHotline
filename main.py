@@ -70,6 +70,26 @@ inputs=[
 # print(probabilities)
 # print(type(response))
 
+app = Flask(name)
+app.config["DEBUG"] = True
+
+# @app.route("/")
+# def home():
+#     return "My website <h1>Hello<h1>"
+
+###################
+@app.route('/', methods=["POST", "GET"])
+def form():
+     if request.method == "POST":
+
+        question = request.form["question"]
+
+        return (question)
+
+     return render_template('form.html')
+###################
+
+
 import flask
 from flask import Flask,render_template
 app = Flask(__name__,template_folder='templates')
@@ -97,4 +117,4 @@ def get_response():
     results = [{'label': labels, 'probability': probabilities} for label, probability in zip(labels, probabilities)]
     return render_template('response.html', results=results)
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
