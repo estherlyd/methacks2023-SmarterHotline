@@ -80,7 +80,7 @@ def form():
         inputs=[question]
         return (get_response())
 
-     return render_template('form.html')
+     return render_template('testtemplate.html')
 
 print(inputs)
 def get_model_response(inputs,examples):

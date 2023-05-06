@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotline</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='testcss.css') }}">
+
+</head>
+<body>
+	<header>
+		<div class="logo-container">
+			<img src="https://via.placeholder.com/100x100.png?text=Logo" alt="Logo">
+			<h1>Hotline</h1>
+		</div>
+	</header>
+	<main>
+		<div class="hero-image">
+			<h2>What can we help you with?</h2>
+			<form>
+				<input type="text" name="question" placeholder="Enter your question here...">
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+	</main>
+	<footer>
+		<p>&copy; 2023 Hotline. All rights reserved.</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #333;
+}
+
+header {
+	background-color: #fff;
+	padding: 10px 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+.logo-container {
+	display: flex;
+	align-items: center;
+}
+
+.logo-container img {
+	margin-right: 10px;
+}
+
+.hero-image {
+	background-image: url("https://via.placeholder.com/1600x900.png?text=Hero+Image");
+	background-size: cover;
+	background-position: center;
+	min-height: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.hero-image h2 {
+	font-size: 36px;
+	font-weight: 400;
+	margin-bottom: 30px;
+	color: #fff;
+}
+
+.hero-image form {
+	display: flex;
+	align-items: center;
+}
+
+.hero-image input[type="text"] {
+	padding: 10px;
+	border-radius: 25px;
+	border: none;
+	flex-grow: 1;
+	margin-right: 10px;
+}
+
+.hero-image button[type="submit"] {
+	padding: 10px 20px;
+	background-color: #003366;
+	color: #fff;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.hero-image button[type="submit"]:hover {
+	background-color: #28587B;
+}
+
+footer {
+	background-color: #eee;
+	padding: 10px 20px;
+	text-align: center;
+	margin-top: 20px;
+}
