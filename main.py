@@ -78,6 +78,14 @@ app.config["DEBUG"] = True
 #     return "My website <h1>Hello<h1>"
 
 ###################
+app = Flask(name)
+app.config["DEBUG"] = True
+
+# @app.route("/")
+# def home():
+#     return "My website <h1>Hello<h1>"
+
+@app.route('/', methods=["POST", "GET"])
 @app.route('/', methods=["POST", "GET"])
 def form():
      if request.method == "POST":
