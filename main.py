@@ -102,7 +102,12 @@ def get_response():
         probabilities = [classification.confidence]
     # results = [{'prediction':prediction,  'probability': probabilities} for prediction, probability in zip(prediction, probabilities)]
     results = [{'label': c.prediction, 'probability': probabilities} for c in response.classifications]
-
+    print(type(results))
+    for result in results:
+        if result['label'] == 'Shelters':
+            return ('https://github.com/')
+    # if results['label'] == 'Shelters':
+    #     return ('some shelter resources')
     return render_template('response.html', results=results)
 if __name__ == '__main__':
     app.run(debug=True)
