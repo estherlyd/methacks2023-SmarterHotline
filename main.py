@@ -49,10 +49,7 @@ examples=[
   Example("What should I do if all of the shelters in my area are full?", "Shelters"),
 
 ]
-inputs=[
-  "I am worried about my exam",
-
-]
+# inputs=["I am worried about my exam",]
 #
 # response = co.classify(
 #   inputs=inputs,
@@ -72,38 +69,39 @@ inputs=[
 
 
 
+
+
+
+import flask
+from flask import Flask,request,render_template
+app = Flask(__name__,template_folder='templates')
+
+
+
 ###################
-app = Flask(name)
-app.config["DEBUG"] = True
+# app = Flask(name)
+# app.config["DEBUG"] = True
 
 # @app.route("/")
 # def home():
 #     return "My website <h1>Hello<h1>"
 
-@app.route('/', methods=["POST", "GET"])
+question =''
 @app.route('/', methods=["POST", "GET"])
 def form():
      if request.method == "POST":
-
+        global question
         question = request.form["question"]
 
         return (question)
 
      return render_template('form.html')
 ###################
-
-
-import flask
-from flask import Flask,render_template
-app = Flask(__name__,template_folder='templates')
-
-
+inputs=[question]
 def get_model_response(inputs,examples):
   co = cohere.Client('1hBeXHXGg8WJ4HedMULMJxi0Br9opZ6tI3QeW76C')
   response = co.classify(inputs=inputs, examples=examples)
   return response
-
-
 @app.route('/get_response')
 def get_response():
     # get the response from the function you defined earlier
