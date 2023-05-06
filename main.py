@@ -70,12 +70,7 @@ inputs=[
 # print(probabilities)
 # print(type(response))
 
-app = Flask(name)
-app.config["DEBUG"] = True
 
-# @app.route("/")
-# def home():
-#     return "My website <h1>Hello<h1>"
 
 ###################
 app = Flask(name)
