@@ -1,83 +1,103 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
+/* Set the background color of the body element to light gray */
 body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-	color: #333;
+  background-color: #f2f2f2;
 }
 
+/* Set the font size and color of all paragraphs */
+p {
+  font-size: 16px;
+  color: #444;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Set the color of all links */
+a {
+  color: #3d85c6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Set the background color of all buttons */
+button {
+  background-color: #3d85c6;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style the header */
 header {
-	background-color: #fff;
-	padding: 10px 20px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-	position: sticky;
-	top: 0;
-	z-index: 100;
+  background-image: url('/static/depositphotos.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
 }
 
-.logo-container {
-	display: flex;
-	align-items: center;
+header::before {
+  content: "";
+  background-color: rgba(0,0,0,0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
-.logo-container img {
-	margin-right: 10px;
+header h1 {
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000000;
+  margin-bottom: 16px;
 }
 
-.hero-image {
-	background-image: url("https://via.placeholder.com/1600x900.png?text=Hero+Image");
-	background-size: cover;
-	background-position: center;
-	min-height: 600px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
+header p {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
 }
 
-.hero-image h2 {
-	font-size: 36px;
-	font-weight: 400;
-	margin-bottom: 30px;
-	color: #fff;
+/* Style the main content */
+main {
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
-.hero-image form {
-	display: flex;
-	align-items: center;
+main h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 16px;
 }
 
-.hero-image input[type="text"] {
-	padding: 10px;
-	border-radius: 25px;
-	border: none;
-	flex-grow: 1;
-	margin-right: 10px;
+main ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-.hero-image button[type="submit"] {
-	padding: 10px 20px;
-	background-color: #003366;
-	color: #fff;
-	border: none;
-	border-radius: 25px;
-	cursor: pointer;
-	transition: background-color 0.2s ease-in-out;
+main li {
+  margin-bottom: 16px;
 }
 
-.hero-image button[type="submit"]:hover {
-	background-color: #28587B;
-}
-
+/* Style the footer */
 footer {
-	background-color: #eee;
-	padding: 10px 20px;
-	text-align: center;
-	margin-top: 20px;
+  background-color: #333;
+  color: white;
+  padding: 16px;
+  text-align: center;
+  font-size: 14px;
 }
