@@ -1,0 +1,23 @@
+/* Set the background color of the body element to light gray */
+body {
+  background-color: pink;
+}
+
+/* Set the font size and color of all paragraphs */
+p {
+  font-size: 16px;
+  color: black;
+}
+
+/* Set the color of all links */
+a {
+  color: blue;
+}
+
+/* Set the background color of all buttons */
+button {
+  background-color: pastel;
+  color: white;
+  border: none;
+  padding: 10px;
+}
