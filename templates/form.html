@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Hotline</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+<font color="green"><h1>Question to Solution</h1></font>
+
     <form action="/" method="POST">
         <label for="Question">What do you need help with?</label>
         <input type="text" name="question">
