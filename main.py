@@ -114,16 +114,20 @@ def get_response():
 
     for result in results:
         if result['label'] == 'Shelters':
-            suggestion = "Here are some <a href='https://github.com'>shelter resources</a>."
+            suggestion = "Seems that you are looking for shelters and maybe you want to check out <a href='https://sheltersafe.ca/'>the ShelterSafe website</a>. "
+            # suggestion = "Here are some <a href='https://github.com'>shelter resources</a>."
             # suggestion = "<a class='suggestion-link' href='https://github.com'>Here are some shelter resources.</a>"
         elif result['label'] == "Medical assistance":
-            suggestion = "Here are some <a href='https://github.com'>medical resources</a>."
+            suggestion = "Seems that you are looking for some medical assistance resources and here are some resources for you: <a href='https://endingviolencecanada.org/sexual-assault-centres-crisis-lines-and-support-services/'>Ending Violence Canada</a>; <a href='https://www.sadvtreatmentcentres.ca/find-a-centre/'>Find a treatment center near you</a>;  <a href='https://nbrhc.on.ca/programs-services/medical-services-2/sexual-assault-treatment-centre/'>What to expect from medical professionals (rape kit, follow up etc.)</a>. "
+            # suggestion = "Here are some <a href='https://github.com'>medical resources</a>."
         elif result['label'] == "Therapy":
-            suggestion = "Here are some <a href='https://github.com'>therapy resources</a>."
+            suggestion = "Seems that you are looking for some therapy resources and here are some resources for you: <a href='https://www.psychologytoday.com/ca/therapists/ontario?category=sexual-abuse'>List of sexual abuse therapists in ontario</a>; <a href='https://www.betterhelp.com/advice/abuse/benefits-of-sexual-abuse-counseling/'>Better help councling</a>;  <a href='Charliehelp therapy targeted towards teens and young adults (11-30)'>Charliehelp therapy targeted towards teens and young adults (11-30)</a>. "
         elif result['label'] == "Academic accommodations":
-            suggestion = "Here are some <a href='https://github.com'>academic accommodation resources</a>."
+            suggestion = "Seems that you are looking for information about academic accomodations and you might want to contact <a href='https://www.torontomu.ca/student-care/about/how-we-help/'>the TMU Student Care </a>. "
+            # suggestion = "Here are some <a href='https://github.com'>academic accommodation resources</a>."
         elif result['label'] == "Safety concerns":
-            suggestion = "Here are some <a href='https://github.com'>safety resources</a>."
+            suggestion = "If you want to build your own safety plan, consider contacting <a href='https://www.torontomu.ca/community-safety-security/personal-safety/'>TMU Community Safety and Security</a>. "
+            # suggestion = "Here are some <a href='https://github.com'>safety resources</a>."
 
         print(suggestion)
 
