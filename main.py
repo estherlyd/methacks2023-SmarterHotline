@@ -115,6 +115,7 @@ def get_response():
     for result in results:
         if result['label'] == 'Shelters':
             suggestion = "Here are some <a href='https://github.com'>shelter resources</a>."
+            # suggestion = "<a class='suggestion-link' href='https://github.com'>Here are some shelter resources.</a>"
         elif result['label'] == "Medical assistance":
             suggestion = "Here are some <a href='https://github.com'>medical resources</a>."
         elif result['label'] == "Therapy":
@@ -123,6 +124,7 @@ def get_response():
             suggestion = "Here are some <a href='https://github.com'>academic accommodation resources</a>."
         elif result['label'] == "Safety concerns":
             suggestion = "Here are some <a href='https://github.com'>safety resources</a>."
+
         print(suggestion)
 
     if suggestion:
