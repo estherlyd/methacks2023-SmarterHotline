@@ -54,7 +54,9 @@ header::before {
   bottom: 0;
   right: 0;
 }
-
+.logo-container img {
+  width: 300px;
+}
 header h1 {
   color: white;
   font-size: 48px;
