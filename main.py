@@ -78,6 +78,7 @@ def form():
         question = request.form["question"]
         global inputs
         inputs=[question]
+        print(question)
         return (get_response())
 
      return render_template('testtemplate.html')
@@ -102,12 +103,44 @@ def get_response():
         probabilities = [classification.confidence]
     # results = [{'prediction':prediction,  'probability': probabilities} for prediction, probability in zip(prediction, probabilities)]
     results = [{'label': c.prediction, 'probability': probabilities} for c in response.classifications]
-    print(type(results))
+    print(results)
+    # print(type(results))
+    # for result in results:
+    #     if result['label'] == 'Shelters':
+    #         suggestion = "Here are some <a href='https://github.com'>shelter resources</a>."
+    #         return suggestion
+    # return render_template('response.html', results=results)
+    suggestion = None
+
     for result in results:
         if result['label'] == 'Shelters':
             suggestion = "Here are some <a href='https://github.com'>shelter resources</a>."
-            return suggestion
+        elif result['label'] == "Medical assistance":
+            suggestion = "Here are some <a href='https://github.com'>medical resources</a>."
+        elif result['label'] == "Therapy":
+            suggestion = "Here are some <a href='https://github.com'>therapy resources</a>."
+        elif result['label'] == "Academic accommodations":
+            suggestion = "Here are some <a href='https://github.com'>academic accommodation resources</a>."
+        elif result['label'] == "Safety concerns":
+            suggestion = "Here are some <a href='https://github.com'>safety resources</a>."
+        print(suggestion)
 
-    return render_template('response.html', results=results)
+    if suggestion:
+        return render_template('testresponse.html', suggestion=suggestion)
+    else:
+        return ('no_suggestion')
+    # for result in results:
+    #     if result['label'] == 'Shelters':
+    #         return ('Shelters Solution')
+    #     elif result['label'] == "Medical assistance":
+    #         return ("Medical assistance Solution")
+    #     elif result['label'] == "Therapy":
+    #         return ("Therapy Solution")
+    #     elif result['label'] == "Academic accommodations":
+    #         return ("Academic accommodations Solution")
+    #     elif result['label'] == "Safety concerns":
+    #         return ("Safety concerns Solution")
+
+    # return render_template('testresponse.html', results=results)
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,71 @@
+/* Set the background color of the body element to light gray */
+body {
+  background-color: lightgray;
+}
+
+/* Set the font size and color of all paragraphs */
+p {
+  font-size: 16px;
+  color: black;
+}
+
+/* Set the color of all links */
+a {
+  color: blue;
+}
+
+/* Set the background color of all buttons */
+button {
+  background-color: darkgray;
+  color: white;
+  border: none;
+  padding: 10px;
+}
+
+/* Style the container */
+.container {
+  margin: auto;
+  max-width: 800px;
+}
+
+/* Style the hero image */
+.hero-image {
+  background-image: url("{{ url_for('static', filename='depositphotos.jpg') }}");
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Style the hero text */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/* Style the content */
+.content {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Style the content headings */
+.content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Style the content text */
+.content p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
